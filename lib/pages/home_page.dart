@@ -1,0 +1,152 @@
+import 'package:flutter/material.dart';
+class HomePage extends StatefulWidget{
+  static final String id='home_page';
+  @override
+  _HomePageState createState()=> _HomePageState();
+}
+class _HomePageState extends State<HomePage>{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+     body:Container(
+       width:double.infinity,
+       decoration:BoxDecoration(
+         gradient:LinearGradient(
+           begin:Alignment.topCenter,
+           colors:[
+             Colors.green[900],
+             Colors.green[700],
+             Colors.green[600],
+           ],
+         ),
+       ),
+       child:Column(
+         crossAxisAlignment:CrossAxisAlignment.start,
+         children:[
+           Container(
+             padding:EdgeInsets.only(left:30,right: 30,top:40,),
+             height: 160,
+             child:Column(
+               mainAxisAlignment:MainAxisAlignment.center,
+               crossAxisAlignment:CrossAxisAlignment.start,
+               children:[
+                 Text('Login',style:TextStyle(color:Colors.white,fontSize:30),),
+                 SizedBox(height:10),
+                 Text('Welcome Back',style:TextStyle(fontSize:18,color:Colors.white,),),
+               ],
+             ),
+           ),
+           Expanded(
+              child:Container(
+                padding:EdgeInsets.all(30),
+                decoration:BoxDecoration(
+                  color:Colors.white,
+                  borderRadius:BorderRadius.only(topLeft:Radius.circular(50),topRight:Radius.circular(50),),
+                ),
+                child:SingleChildScrollView(
+                  child:Column(
+                    children:[
+                      SizedBox(height:50),
+                      Container(
+                        decoration:BoxDecoration(
+                          borderRadius:BorderRadius.circular(10),
+                          color:Colors.white,
+                          boxShadow:[
+                            BoxShadow(color:Color.fromRGBO(171,171,171,0.7),blurRadius:20,offset:Offset(0,10),),
+                          ],
+                        ),
+                        child:Column(
+                          children:[
+                            Container(
+                              decoration:BoxDecoration(
+                                  border:Border(bottom:BorderSide(color:Colors.grey[200]),),
+                              ),
+                              child:TextField(
+                                decoration:InputDecoration(
+                                  contentPadding:EdgeInsets.all(10),
+                                  hintText:'Email',
+                                  border:InputBorder.none,
+                                ),
+                              ),
+                            ),
+                             Container(
+                               child:TextField(
+                                 obscureText:true,
+                                 decoration:InputDecoration(
+                                     contentPadding:EdgeInsets.all(10),
+                                     hintText:'Password',
+                                     border:InputBorder.none,
+                                 ),
+                               ),
+                             ),
+                          ],
+                        )
+                      ),
+                      SizedBox(height:30,),
+                      Container(
+                        margin:EdgeInsets.symmetric(horizontal: 40),
+                        height:45,
+                        width:double.infinity,
+                        child:FlatButton(
+                          onPressed:(){},
+                          shape:RoundedRectangleBorder(
+                            borderRadius:BorderRadius.circular(22.5),
+                          ),
+                          color:Colors.green[800],
+                          child:Text('Login',style:TextStyle(color:Colors.white,fontWeight:FontWeight.bold,)),
+                        ),
+                      ),
+                      SizedBox(height:18),
+                      Container(
+                        child:Text('Login with SNS',style:TextStyle(fontWeight:FontWeight.bold,color:Colors.black54)),
+                      ),
+                      SizedBox(height:18),
+                      Container(
+                        height: 45,
+                        width:double.infinity,
+                        child:Row(
+                          children:[
+                            Expanded(
+                              flex:4,
+                              child:Container(
+                                height: 45,
+                                child:FlatButton(
+                                  onPressed:(){},
+                                  color:Colors.blue,
+                                  shape:RoundedRectangleBorder(
+                                    borderRadius:BorderRadius.circular(22.5),
+                                  ),
+                                  child:Text('Facebook',style:TextStyle(color:Colors.white,),),
+                                ),
+                              ),
+                            ),
+                            Spacer(flex:1),
+                            Expanded(
+                              flex:4,
+                              child:Container(
+                                height:45,
+                                child:FlatButton(
+                                  onPressed:(){
+                                  },
+                                  child:Text('Github',style:TextStyle(color:Colors.white,),),
+                                  shape:RoundedRectangleBorder(
+                                    borderRadius:BorderRadius.circular(22.5),
+                                  ),
+                                  color:Colors.black,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+           ),
+         ],
+       ),
+     ),
+    );
+  }
+}
